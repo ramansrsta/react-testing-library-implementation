@@ -6,3 +6,9 @@ test("Greet component should render", () => {
   const textElement = screen.getByText("Hello");
   expect(textElement).toBeInTheDocument();
 });
+
+test("Greet Renders with name if present", () => {
+  render(<Greet name="Raman" />);
+  const textElement = screen.getByText("Hello Raman");
+  expect(textElement).toBeInTheDocument();
+});
