@@ -4,8 +4,20 @@ import { Application } from "./Application";
 describe("Application", () => {
   test("renders form with name input", () => {
     render(<Application />);
-    const nameElement = screen.getByTestId("name");
+
+    const pageHeading = screen.getByRole("heading", {
+      level: 1,
+    });
+    expect(pageHeading).toBeInTheDocument();
+
+    const sectionHeading = screen.getByRole("heading", { level: 2 });
+    expect(sectionHeading).toBeInTheDocument();
+
+    const nameElement = screen.getByRole("textbox", { name: "Name" });
     expect(nameElement).toBeInTheDocument();
+
+    const bioElement = screen.getByRole("textbox", { name: "Bio" });
+    expect(bioElement).toBeInTheDocument();
 
     const jobElement = screen.getByRole("combobox");
     expect(jobElement).toBeInTheDocument();
