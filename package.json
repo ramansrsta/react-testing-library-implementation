@@ -27,11 +27,6 @@
     "coverage": "react-scripts test --coverage --watchAll",
     "prepare": "husky install"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm test  && git add ."
-    }
-  },
   "eslintConfig": {
     "extends": [
       "react-app",
